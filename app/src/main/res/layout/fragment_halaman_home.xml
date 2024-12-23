@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EFEFEF"
+        android:orientation="vertical">
+
+
+        <!-- Header -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CardHalamanHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/JudulHalaman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Template Plot"
+                android:textColor="#6B6143"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="21.76mm"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:src="@drawable/rectangle_shape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/JudulHalaman"
+                tools:ignore="ContentDescription,ImageContrastCheck,InOrMmUsage" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/TemplatePlot"
+                android:layout_width="match_parent"
+                android:layout_height="21.76mm"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/JudulHalaman"
+                tools:ignore="InOrMmUsage">
+
+            </androidx.viewpager2.widget.ViewPager2>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/CardPetunjuk"
+                android:layout_width="match_parent"
+                android:layout_height="55mm"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6"
+                app:layout_constraintVertical_bias="0.5"
+                tools:ignore="InOrMmUsage">
+
+                <ImageView
+                    android:id="@+id/BGCardPetujuk"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/rectangle_shape"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription,DuplicateIds,InOrMmUsage" />
+
+                <TextView
+                    android:id="@+id/Petunjuk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Petunjuk"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.071"
+                    tools:ignore="HardcodedText,MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/Fitur_Lainnya"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Fitur Lainnya"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text2"
+                    tools:ignore="HardcodedText,MissingConstraints,TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="149dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Ayo buat sebuah plot!"
+                    android:textAlignment="center"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.503"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Petunjuk"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:ignore="DuplicateIds,HardcodedText,MissingConstraints,TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="284dp"
+                    android:layout_height="46dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Tulis adegan film, manga atau novel kesukaanmu Pilih template di atas untuk mempermudah membuat plot!"
+                    android:textAlignment="center"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text1"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:ignore="DuplicateIds,HardcodedText,MissingConstraints,TextSizeCheck" />
+
+                <ImageView
+                    android:id="@+id/btn_buat_ide"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.23"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Fitur_Lainnya"
+                    app:srcCompat="@drawable/card_with_border"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/btn_text_buat_ide"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Buat Ide"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_buat_ide"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_buat_ide"
+                    app:layout_constraintStart_toStartOf="@+id/btn_buat_ide"
+                    app:layout_constraintTop_toTopOf="@+id/btn_buat_ide"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:id="@+id/btn_buat_karakter"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.141"
+                    app:layout_constraintStart_toEndOf="@+id/btn_buat_ide"
+                    app:layout_constraintTop_toBottomOf="@+id/Fitur_Lainnya"
+                    app:srcCompat="@drawable/card_with_border"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/btn_text_buat_karakter"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Membuat Karakter"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_buat_karakter"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_buat_karakter"
+                    app:layout_constraintStart_toStartOf="@+id/btn_buat_karakter"
+                    app:layout_constraintTop_toTopOf="@+id/btn_buat_karakter"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:id="@+id/btn_buat_timeline"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_buat_ide"
+                    app:srcCompat="@drawable/card_with_border"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/btn_text_buat_timeline"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Membuat Timeline"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_buat_timeline"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_buat_timeline"
+                    app:layout_constraintStart_toStartOf="@+id/btn_buat_timeline"
+                    app:layout_constraintTop_toTopOf="@+id/btn_buat_timeline"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:id="@+id/btn_buat_lokasi"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.14"
+                    app:layout_constraintStart_toEndOf="@+id/btn_buat_timeline"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_buat_karakter"
+                    app:srcCompat="@drawable/card_with_border"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/btn_text_buat_lokasi"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Membuat Lokasi"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_buat_lokasi"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_buat_lokasi"
+                    app:layout_constraintStart_toStartOf="@+id/btn_buat_lokasi"
+                    app:layout_constraintTop_toTopOf="@+id/btn_buat_lokasi"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:id="@+id/btn_buat_bab"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_buat_timeline"
+                    app:srcCompat="@drawable/card_with_border"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/btn_text_buat_bab"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Membuat Ringkasan Bab Cerita"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_buat_bab"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_buat_bab"
+                    app:layout_constraintStart_toStartOf="@+id/btn_buat_bab"
+                    app:layout_constraintTop_toTopOf="@+id/btn_buat_bab"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:ignore="HardcodedText" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

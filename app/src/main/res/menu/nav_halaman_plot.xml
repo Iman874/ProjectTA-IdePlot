@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Nav_halamanPengaturanBab"
+        android:icon="@drawable/icon_bab"
+        android:title="Buat Bab"
+        app:iconSize="100dp"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/Nav_halamanPengaturanPlot"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="Pengaturan Plot"
+        app:iconSize="100dp"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/Nav_halamanPengaturanKarakter"
+        android:icon="@drawable/icon_karakter"
+        android:title="Karakter"
+        app:iconSize="100dp"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/Nav_halamanPengaturanTimeline"
+        android:icon="@drawable/icon_timeline"
+        android:title="Timeline"
+        app:iconSize="100dp"
+        tools:ignore="HardcodedText" />
+
+</menu>

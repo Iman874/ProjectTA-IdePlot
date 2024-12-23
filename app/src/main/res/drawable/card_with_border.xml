@@ -1,0 +1,11 @@
+<shape xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="ExtraText">
+    <solid android:color="#0000FFFF"/> <!-- Warna latar belakang -->
+    <corners android:radius="10dp"/> <!-- Sudut membulat -->
+
+    <!-- Border -->
+    <stroke
+        android:color="@color/black"
+        android:width="1sp"/>
+</shape>

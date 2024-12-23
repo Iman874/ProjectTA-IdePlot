@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_halaman_plot"
+    app:startDestination="@id/Nav_halamanPengaturanBab">
+
+    <fragment
+        android:id="@+id/Nav_halamanPengaturanTimeline"
+        android:name="com.rosuliman.projectta_ideplot.content.halaman_plot.HalamanPengaturanTimeline"
+        android:label="fragment_halaman_pengaturan_timeline"
+        tools:layout="@layout/fragment_halaman_pengaturan_timeline"
+        app:showAsAction="ifRoom"/>
+    <fragment
+        android:id="@+id/Nav_halamanPengaturanKarakter"
+        android:name="com.rosuliman.projectta_ideplot.content.halaman_plot.HalamanPengaturanKarakter"
+        android:label="fragment_halaman_pengaturan_karakter"
+        tools:layout="@layout/fragment_halaman_pengaturan_karakter"
+        app:showAsAction="ifRoom"/>
+    <fragment
+        android:id="@+id/Nav_halamanPengaturanPlot"
+        android:name="com.rosuliman.projectta_ideplot.content.halaman_plot.HalamanPengaturanPlot"
+        android:label="fragment_halaman_pengaturan_plot"
+        tools:layout="@layout/fragment_halaman_pengaturan_plot"
+        app:showAsAction="ifRoom"/>
+    <fragment
+        android:id="@+id/Nav_halamanPengaturanBab"
+        android:name="com.rosuliman.projectta_ideplot.content.halaman_plot.HalamanPengaturanBab"
+        android:label="fragment_halaman_pengaturan_bab"
+        tools:layout="@layout/fragment_halaman_pengaturan_bab"
+        app:showAsAction="ifRoom"/>
+</navigation>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Warna background persegi panjang -->
+    <solid android:color="#FFFFFF" /> <!-- Ganti dengan warna yang diinginkan -->
+
+    <!-- Mengatur sudut persegi panjang (opsional) -->
+    <corners android:radius="15dp" /> <!-- Menambahkan sudut melengkung -->
+</shape>

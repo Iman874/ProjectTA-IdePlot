@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/Nav_halamanHome">
+    <fragment
+        android:id="@+id/Nav_halamanHome"
+        android:name="com.rosuliman.projectta_ideplot.content.halaman_utama.HalamanHome"
+        android:label="fragment_halaman_home"
+        tools:layout="@layout/fragment_halaman_home" />
+    <fragment
+        android:id="@+id/Nav_halamanProfile"
+        android:name="com.rosuliman.projectta_ideplot.content.halaman_utama.HalamanProfile"
+        android:label="fragment_halaman_profile"
+        tools:layout="@layout/fragment_halaman_profile" />
+    <fragment
+        android:id="@+id/Nav_halamanMenuList"
+        android:name="com.rosuliman.projectta_ideplot.content.halaman_utama.HalamanMenuList"
+        android:label="fragment_halaman_menu_list"
+        tools:layout="@layout/fragment_halaman_menu_list" />
+</navigation>

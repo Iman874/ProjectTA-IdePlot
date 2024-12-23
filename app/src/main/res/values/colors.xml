@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
+
+    <!-- Warna Background Aktif -->
+    <color name="active_background_color">#000000</color>
+
+    <!-- Warna Background Tidak Aktif -->
+    <color name="inactive_background_color">#B0BEC5</color>
+
+    <!-- Warna ikon aktif dan tidak aktif -->
+    <color name="color_icon_tint">#000000</color>  <!-- Ganti dengan warna ikon -->
+    <color name="color_text_tint">#6B6143</color>  <!-- Ganti dengan warna teks -->
+
+</resources>
