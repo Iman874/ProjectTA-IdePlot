@@ -94,7 +94,7 @@ class HalamanDaftar : AppCompatActivity() {
         val jsonObject = JSONObject()
         try {
             jsonObject.put("email", email)
-            jsonObject.put("name", name)
+            jsonObject.put("nama", name)
             jsonObject.put("password", password)
         } catch (e: JSONException) {
             e.printStackTrace()
