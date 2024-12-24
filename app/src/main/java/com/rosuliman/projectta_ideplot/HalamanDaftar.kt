@@ -39,11 +39,19 @@ class HalamanDaftar : AppCompatActivity() {
         // Panggil fungsi untuk mengatur listener pada loginText
         setupLoginText()
 
-        binding.btnDaftar.setOnClickListener{
+
+        binding.btnDaftar.setOnClickListener {
             if (isInternetAvailable()) {
-                registerUser(email, nama, password)
+                val email = binding.formEmailDaftar.text.toString()
+                val nama = binding.formNamaDaftar.text.toString()
+                val password = binding.formPassword1Daftar.text.toString()
+
+                if (email.isNotEmpty() && nama.isNotEmpty() && password.isNotEmpty()) {
+                    registerUser(email, nama, password)
+                } else {
+                    Toast.makeText(this, "Semua field harus diisi!", Toast.LENGTH_SHORT).show()
+                }
             } else {
-                // Menampilkan pesan Toast jika tidak ada koneksi internet
                 Toast.makeText(this, "Tidak dapat terhubung ke jaringan internet", Toast.LENGTH_SHORT).show()
             }
         }
@@ -113,6 +121,7 @@ class HalamanDaftar : AppCompatActivity() {
                 Toast.makeText(this@HalamanDaftar, "Registration Failed", Toast.LENGTH_SHORT).show()
 
                 // Log error secara rinci untuk membantu debugging
+                Log.e("RegistrationError", "Response Body: ${String(error.networkResponse.data)}") // Cek isi response error
                 Log.e("HalamanDaftar", "Registration failed: ${error.message}", error)
             })
 
