@@ -24,8 +24,8 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo_ideplot"
-        android:contentDescription="@string/nothing" />
+        android:contentDescription="@string/nothing"
+        app:srcCompat="@drawable/logo_ideplot" />
   </androidx.cardview.widget.CardView>
 
   <androidx.cardview.widget.CardView
@@ -35,7 +35,8 @@
       android:layout_marginBottom="-50dp"
       app:cardCornerRadius="20dp"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/cardView">
+      app:layout_constraintTop_toBottomOf="@+id/cardView"
+      tools:ignore="VisualLintBounds">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -80,6 +81,7 @@
           android:ems="10"
           android:hint="@string/ulangi_password"
           android:inputType="textPassword"
+          android:textColorHint="#757575"
           android:textSize="16sp"
           app:layout_constraintBottom_toBottomOf="@+id/CardPassword2"
           app:layout_constraintEnd_toEndOf="@+id/CardPassword2"
@@ -110,12 +112,13 @@
           android:ems="10"
           android:hint="@string/masukan_password"
           android:inputType="textPassword"
+          android:textColorHint="#757575"
+          android:textSize="16sp"
           app:layout_constraintBottom_toBottomOf="@+id/CardPassword1"
           app:layout_constraintEnd_toEndOf="@+id/CardPassword1"
           app:layout_constraintStart_toStartOf="@+id/CardPassword1"
           app:layout_constraintTop_toTopOf="@+id/CardPassword1"
-          tools:ignore="MissingConstraints,TouchTargetSizeCheck"
-          android:textSize="16sp" />
+          tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
       <ImageView
           android:id="@+id/CardEmail"
@@ -141,6 +144,7 @@
           android:hint="@string/masukan_email"
           android:inputType="text"
           android:singleLine="true"
+          android:textColorHint="#757575"
           android:textSize="16sp"
           app:layout_constraintBottom_toBottomOf="@+id/CardEmail"
           app:layout_constraintEnd_toEndOf="@+id/CardEmail"
@@ -174,6 +178,7 @@
           android:hint="@string/masukan_nama"
           android:inputType="text"
           android:singleLine="true"
+          android:textColorHint="#757575"
           android:textSize="16sp"
           app:layout_constraintBottom_toBottomOf="@+id/CardNama"
           app:layout_constraintEnd_toEndOf="@+id/CardNama"
@@ -212,16 +217,15 @@
           android:id="@+id/cardView4"
           android:layout_width="51.36mm"
           android:layout_height="7mm"
-          android:layout_marginTop="162dp"
           app:cardBackgroundColor="#5271FF"
           app:cardCornerRadius="10dp"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintHorizontal_bias="0.5"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/form_password2_daftar"
           app:layout_constraintVertical_bias="0.5"
-          tools:ignore="InOrMmUsage">
+          tools:ignore="InOrMmUsage,TextSizeCheck">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/btn_daftar"
@@ -268,6 +272,21 @@
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/textView8"
           app:srcCompat="@drawable/logo_google"
+          tools:ignore="MissingConstraints" />
+
+      <ProgressBar
+          android:id="@+id/progressBar"
+          style="?android:attr/progressBarStyle"
+          android:layout_width="127dp"
+          android:layout_height="118dp"
+          android:layerType="software"
+          android:visibility="gone"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.5"
           tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

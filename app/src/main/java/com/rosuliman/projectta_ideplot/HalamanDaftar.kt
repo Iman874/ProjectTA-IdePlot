@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.rosuliman.projectta_ideplot
 
 import android.annotation.SuppressLint
@@ -8,15 +10,16 @@ import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.view.MotionEvent
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.android.volley.Request
-import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.Volley
+import com.rosuliman.projectta_ideplot.database.ApiRespone
+import com.rosuliman.projectta_ideplot.database.RetrofitClient
+import com.rosuliman.projectta_ideplot.database.tabel.User
 import com.rosuliman.projectta_ideplot.databinding.ActivityHalamanDaftarBinding
-import org.json.JSONException
-import org.json.JSONObject
+import retrofit2.Call
 
 class HalamanDaftar : AppCompatActivity() {
 
@@ -29,23 +32,29 @@ class HalamanDaftar : AppCompatActivity() {
 
         binding = ActivityHalamanDaftarBinding.inflate(layoutInflater)
 
-        val nama = binding.formNamaDaftar.toString()
-        val email = binding.formEmailDaftar.toString()
-        val password = binding.formPassword1Daftar.toString()
-
         // Set content view dengan root dari binding
         setContentView(binding.root)
 
         // Panggil fungsi untuk mengatur listener pada loginText
         setupLoginText()
 
-
         binding.btnDaftar.setOnClickListener {
+            // Menampilkan progressBarLogin dan layer redup saat proses dimulai
+            binding.progressBar.visibility = View.VISIBLE
+            binding.main.alpha = 0.5F
+
             if (isInternetAvailable()) {
                 val email = binding.formEmailDaftar.text.toString()
                 val nama = binding.formNamaDaftar.text.toString()
                 val password = binding.formPassword1Daftar.text.toString()
+                val passwordCheck = binding.formPassword2Daftar.text.toString()
 
+                if (passwordCheck != password){
+                    Toast.makeText(this, "Konfirmasi Password tidak sama!", Toast.LENGTH_SHORT).show()
+                }
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    Toast.makeText(this, "Masukan Format Email yang benar!", Toast.LENGTH_SHORT).show()
+                }
                 if (email.isNotEmpty() && nama.isNotEmpty() && password.isNotEmpty()) {
                     registerUser(email, nama, password)
                 } else {
@@ -96,37 +105,66 @@ class HalamanDaftar : AppCompatActivity() {
         return activeNetwork != null && activeNetwork.isConnected
     }
 
-    private fun registerUser(email: String, name: String, password: String) {
-        val url = "https://automatic-umbrella-7v649xxx446cw459-3000.app.github.dev/register" // Ganti dengan URL server yang benar
+    // Fungsi untuk login user
+    private fun registerUser(email: String, nama: String, password: String) {
+        // Membuat objek User
+        val user = User(
+            nama = nama,
+            email = email,
+            password = password)
 
-        val jsonObject = JSONObject()
-        try {
-            jsonObject.put("email", email)
-            jsonObject.put("nama", name)
-            jsonObject.put("password", password)
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
+        // Menggunakan Retrofit untuk memanggil API
+        val call = RetrofitClient.apiService.register(user)
 
-        // Membuat request API
-        val request = JsonObjectRequest(
-            Request.Method.POST, url, jsonObject,
-            { response ->
-                Toast.makeText(this@HalamanDaftar, "Registration Successful", Toast.LENGTH_SHORT).show()
-                // Redirect ke halaman login atau beranda setelah registrasi berhasil
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            },
-            { error ->
-                Toast.makeText(this@HalamanDaftar, "Registration Failed", Toast.LENGTH_SHORT).show()
+        call.enqueue(object : retrofit2.Callback<ApiRespone> {
+            override fun onResponse(call: Call<ApiRespone>, response: retrofit2.Response<ApiRespone>) {
+                // Mengambil pesan server
+                val pesanServer = response.body()?.pesanServer
+                if (response.isSuccessful) {
+                    // Ambil userId jika response berhasil
+                    val userId = response.body()?.id
+                    if (userId != null) {
+                        Toast.makeText(this@HalamanDaftar, "Registrasi Successful", Toast.LENGTH_SHORT).show()
+                        Log.e("Registrasi Succes", "Registrasi succes: ${pesanServer}")
 
-                // Log error secara rinci untuk membantu debugging
-                Log.e("RegistrationError", "Response Body: ${String(error.networkResponse.data)}") // Cek isi response error
-                Log.e("HalamanDaftar", "Registration failed: ${error.message}", error)
-            })
+                        // Simpan userId ke SharedPreferences
+                        saveUserId(userId)
 
-        // Menambahkan request ke queue
-        val queue = Volley.newRequestQueue(this)
-        queue.add(request)
+                        // Mengembalikan progress bar dan main view ke posisi semula
+                        binding.progressBar.visibility = View.GONE
+                        binding.main.alpha = 0F
+
+                        // Redirect ke halaman login atau beranda setelah login berhasil
+                        val intent = Intent(this@HalamanDaftar, MainActivity::class.java)
+                        startActivity(intent)
+                        finish() // Tutup halaman login
+                    } else {
+                        // Tampilkan pesan error untuk id yang tidak ditemukan
+                        Log.e("ID bermasalah", "ID user bermasalah: ${pesanServer}")
+                    }
+                } else {
+                    // Mengembalikan progress bar dan main view ke posisi semula
+                    binding.progressBar.visibility = View.GONE
+                    binding.main.alpha = 0F
+
+                    // Tampilkan pesan error dari server
+                    Toast.makeText(this@HalamanDaftar, "Login Failed: ${pesanServer}", Toast.LENGTH_SHORT).show()
+                    Log.e("Registrasi Failed", "Registrasi failed: ${pesanServer}")
+                }
+            }
+
+            override fun onFailure(call: Call<ApiRespone>, t: Throwable) {
+                Toast.makeText(this@HalamanDaftar, "Login Failed: ${t.message}", Toast.LENGTH_SHORT).show()
+                Log.e("Registrasi Error", "Registrasi failed: ${t.message}", t)
+            }
+        })
     }
+
+    private fun saveUserId(userId: Int) {
+        val sharedPreferences = getSharedPreferences("UserPreferences", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putInt("USER_ID", userId)
+        editor.apply()
+    }
+
 }

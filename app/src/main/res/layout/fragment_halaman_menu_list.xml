@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".content.halaman_utama.HalamanMenuList">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Ini Halaman Menu List" />
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/CardPassword2"
+                android:layout_width="180dp"
+                android:layout_height="7mm"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/nothing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/card_with_border"
+                tools:ignore="InOrMmUsage,MissingConstraints" />
+
+            <TextView
+                android:id="@+id/btn_text_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Plot"
+                android:textColor="#6B6143"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@+id/CardPassword2"
+                app:layout_constraintEnd_toEndOf="@+id/CardPassword2"
+                app:layout_constraintHorizontal_bias="0.43"
+                app:layout_constraintStart_toStartOf="@+id/CardPassword2"
+                app:layout_constraintTop_toTopOf="@+id/CardPassword2" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/button_more"
+                app:layout_constraintBottom_toBottomOf="@+id/CardPassword2"
+                app:layout_constraintEnd_toEndOf="@+id/CardPassword2"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/btn_text_filter"
+                app:layout_constraintTop_toTopOf="@+id/CardPassword2" />
+
+            <ListView
+                android:layout_width="409dp"
+                android:layout_height="667dp"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="63dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
 
 </FrameLayout>
