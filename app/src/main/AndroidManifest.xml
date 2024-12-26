@@ -6,7 +6,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
+        android:forceDarkAllowed="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -64,7 +66,7 @@
         <activity
             android:name=".SplashScreen"
             android:exported="true"
-            android:theme="@style/Base.Theme.ProjectTAIdePlot">
+            android:theme="@style/Theme.ProjectTAIdePlot">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

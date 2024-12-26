@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.ProjectTAIdePlot" parent="Theme.AppCompat.Dialog.Alert">
+    <style name="Base.Theme.ProjectTAIdePlot" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:colorBackground">@color/white</item>
 
         <!-- Menghapus ActionBar atau Toolbar -->
@@ -45,11 +45,6 @@
         <item name="itemBackground">@android:color/transparent</item>
         <item name="itemIconTint">@drawable/nav_item_icon_tint</item>
         <item name="itemTextColor">@drawable/nav_item_text_tint</item>
-    </style>
-    <!-- Base application theme. -->
-    <style name="Base.Base.Theme.ProjectTAIdePlot" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
 </resources>

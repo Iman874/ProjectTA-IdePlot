@@ -1,7 +1,7 @@
 <resources>
 
-    <style name="Widget.Theme.ProjectTAIdePlot.MyView" parent="">
-        <item name="android:background">@color/gray_400</item>
+    <style name="Widget.Theme.ProjectTAIdePlot.MyView" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:background">@color/white</item>
 
     </style>
 </resources>

@@ -10,6 +10,7 @@ import android.view.animation.ScaleAnimation
 import android.view.animation.TranslateAnimation
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
