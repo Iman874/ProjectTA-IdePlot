@@ -1,6 +1,6 @@
 package com.rosuliman.projectta_ideplot.database
 
-data class ApiRespone(
+data class ApiResponse(
     val id: Int,
     val pesanServer: String
 )

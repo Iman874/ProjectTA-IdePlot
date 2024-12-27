@@ -55,10 +55,15 @@
                 app:layout_constraintTop_toTopOf="@+id/CardPassword2" />
 
             <ListView
-                android:layout_width="409dp"
-                android:layout_height="667dp"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="63dp" />
+                android:id="@+id/ListViewPlot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CardPassword2"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="1dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>

@@ -15,7 +15,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.rosuliman.projectta_ideplot.database.ApiRespone
+import com.rosuliman.projectta_ideplot.database.ApiResponse
 import com.rosuliman.projectta_ideplot.database.RetrofitClient
 import com.rosuliman.projectta_ideplot.database.tabel.User
 import com.rosuliman.projectta_ideplot.databinding.ActivityHalamanDaftarBinding
@@ -107,7 +107,7 @@ class HalamanDaftar : AppCompatActivity() {
 
     // Fungsi untuk login user
     private fun registerUser(email: String, nama: String, password: String) {
-        // Membuat objek User
+
         val user = User(
             nama = nama,
             email = email,
@@ -116,8 +116,8 @@ class HalamanDaftar : AppCompatActivity() {
         // Menggunakan Retrofit untuk memanggil API
         val call = RetrofitClient.apiService.register(user)
 
-        call.enqueue(object : retrofit2.Callback<ApiRespone> {
-            override fun onResponse(call: Call<ApiRespone>, response: retrofit2.Response<ApiRespone>) {
+        call.enqueue(object : retrofit2.Callback<ApiResponse> {
+            override fun onResponse(call: Call<ApiResponse>, response: retrofit2.Response<ApiResponse>) {
                 // Mengambil pesan server
                 val pesanServer = response.body()?.pesanServer
                 if (response.isSuccessful) {
@@ -153,7 +153,7 @@ class HalamanDaftar : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<ApiRespone>, t: Throwable) {
+            override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
                 Toast.makeText(this@HalamanDaftar, "Login Failed: ${t.message}", Toast.LENGTH_SHORT).show()
                 Log.e("Registrasi Error", "Registrasi failed: ${t.message}", t)
             }
