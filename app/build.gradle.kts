@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.activity)
+    implementation(libs.androidx.mediarouter)
 
     // Testing dependencies
     testImplementation("junit:junit:4.13.2")

@@ -55,7 +55,7 @@ class HalamanMenuList : Fragment() {
             override fun onResponse(call: Call<ApiResponseList>, response: Response<ApiResponseList>) {
                 if (response.isSuccessful) {
                     val apiResponse = response.body()
-                    if (apiResponse != null && apiResponse.plot?.isNotEmpty() == true) {
+                    if (apiResponse != null && apiResponse.plot.isNotEmpty() == true) {
                         Log.d("HalamanMenuList", "Fetched plots: ${apiResponse.plot}")
 
                         // Update data dan adapter

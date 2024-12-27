@@ -1,6 +1,6 @@
 package com.rosuliman.projectta_ideplot.database.tabel
 
-data class Template(
+data class  Template(
     val kode_developer: Int,
     val nama_template: String,
     val pairing_template: String,

@@ -7,6 +7,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.rosuliman.projectta_ideplot.ViewPage.ViewPagerAdapter_HalamanUtama
 import com.rosuliman.projectta_ideplot.databinding.ActivityMainBinding
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
